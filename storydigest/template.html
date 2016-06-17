@@ -1,0 +1,44 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title>storydigest - {{ date }}</title>
+        <meta charset="UTF-8">
+        <style>
+h1 {
+    text-align: center;
+    font-family: 'Palatino';
+    font-size: 3em;
+    padding-top: 1em;
+    padding-bottom: 0.75em;
+}
+
+.story-item {
+    font-family: 'Palatino';
+    font-size: 1.75em;
+    text-align: center;
+    margin: 1em;
+    word-wrap: break-word;
+}
+
+.story-item p {
+    display: inline;
+}
+
+.story-item a {
+    display: inline;
+}
+</style>
+    </head>
+    <body>
+        <h1>storydigest - {{ date }}</h1>
+        <div id="main-body">
+            {% for story in stories %}
+            <div class="story-item">
+                <p>{{ story.title }}</p><br />
+                <a target="_blank" href="{{ story.str_url }}">{{ story.str_url }}</a><br />
+                <a target="_blank" href="{{ story.str_comment_url }}">Comments</a><br />
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "subreddits": [
+        "programming", "linux", "elixir", "python",
+        "golang", "technology"
+    ],
+    "hackernews": true,
+    "output": {
+        "type": "html",
+        "options": {
+            "location": "./output.html"
+        }
+    }
+}
