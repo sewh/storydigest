@@ -52,9 +52,10 @@ class RedditGrabber(object):
         stories = []
         for child in children:
             data = child['data']
+            comment_url = urlparse("https://reddit.com{}"
+                                   .format(data['permalink']))
             story = Story(url=urlparse(data['url']),
-                          comment_url="https://reddit.com/{}"
-                          .format(data['permalink']),
+                          comment_url=comment_url,
                           title=unescape(data['title']))
             stories.append(story)
         return stories
