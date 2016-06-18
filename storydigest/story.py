@@ -9,7 +9,7 @@ class Story(object):
         self.comment_url = comment_url
         self.title = title
         self.str_url = urlunparse(url)
-        self.str_comment_url = comment_url
+        self.str_comment_url = urlunparse(comment_url)
 
     def __repr__(self):
         return """Title: {}
