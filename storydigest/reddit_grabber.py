@@ -34,7 +34,7 @@ class RedditGrabber(object):
         flat_results = list(chain(*[self.json_to_stories(result)
                                     for result in results]))
         shuffle(flat_results)
-        return flat_results[:self.amount]
+        return flat_results[:self.amount * len(self.subreddits)]
 
     async def get_story(self,
                         subreddit: str,
